@@ -4,6 +4,7 @@ pipeline{
 	
 	tools{
 		maven "3.6.3"
+		jdk "JDK8"
 	}
 	
 	stages{
