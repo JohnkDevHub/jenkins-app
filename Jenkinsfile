@@ -7,21 +7,25 @@ pipeline{
 	}
 	
 	stages{
-		stage("Build"){
+		stage("Display Version "){
 			steps{
 				sh "mvn -version"
-				
+			}
+		}
+		
+		stage("Do Build"){
+			steps{
+				sh "mvn clean install"
 			}
 		}
 	}
 	
 	post{
 		always{
-			echo 'OK then'
+			cleanWs()
 		}
 	}	
 	
 }
-
 
 
