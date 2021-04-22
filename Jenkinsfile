@@ -22,6 +22,7 @@ pipeline{
 	
 	post{
 		always{
+		echo 'nice one'
 			cleanWs()
 		}
 	}	
