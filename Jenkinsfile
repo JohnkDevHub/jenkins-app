@@ -2,10 +2,19 @@
 pipeline{
 	agent any
 	
+	tools{
+		maven "3.6.3"
+	}
+	
 	stages{
-		stage("Build"){
+		stage("Display Version "){
 			steps{
 				sh "mvn -version"
+			}
+		}
+		
+		stage("Do Build"){
+			steps{
 				sh "mvn clean install"
 			}
 		}
@@ -13,7 +22,7 @@ pipeline{
 	
 	post{
 		always{
-			echo 'OK then'
+			cleanWs()
 		}
 	}	
 	
