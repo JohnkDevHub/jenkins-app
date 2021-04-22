@@ -10,7 +10,7 @@ public class GreetingController {
     @GetMapping("/greeting")
 
     public String greet(){
-
+nop nop
         return "Hello " ;//+ user.getEmail();
 
     }
